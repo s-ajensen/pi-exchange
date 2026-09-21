@@ -1,0 +1,16 @@
+export type Message = { seq: number; from: string; to: string; text: string; at: string };
+export type ErrorResponse = { error: string };
+export type HealthResponse = { ok: true };
+export type JoinRequest = { address: string; host: string; cwd: string; sessionName: string; session: string };
+export type JoinResponse = { address: string };
+export type HeartbeatRequest = { address: string };
+export type LeaveRequest = { address: string };
+export type Peer = { address: string; host: string; cwd: string; sessionName: string; online: boolean; lastSeen: string };
+export type PeersResponse = Peer[];
+export type SendRequest = { from: string; to: string[]; text: string };
+export type SendReceipt = { to: string; seq: number; online: boolean };
+export type SendResponse = SendReceipt[];
+export type MailQuery = { address: string; after?: number; wait?: number };
+export type MailResponse = Message[];
+export type AckRequest = { address: string; upTo: number };
+export type SuccessResponse = { ok: true };
